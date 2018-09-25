@@ -1,0 +1,245 @@
+ /* Mes styles "Générateur de citations" */
+
+// ----------------
+// Color
+// ----------------
+
+$color-orange: rgba(191, 119, 40, 1);
+$color-blue: rgba(37, 124, 180, 1);
+$color-cyan: rgba(68, 166, 228, 1);
+
+// ----------------
+// Typographie
+// ----------------
+
+@font-face{
+	/*font-family: 'Messenger Rough';*/
+	font-family: 'Messenger-Rough';
+	src: url('../../font/Messenger-Rough.otf') format('otf');
+}
+
+h2, label, p{
+	font-family: "Open Sans", "sans-serif" !important;
+}
+
+// ----------------
+// Button radio
+// ----------------
+
+:root{
+	--color-choix-citations: rgba(191, 119, 40, 1);
+	--input-size: 3rem;
+	--spacing-unit: 1rem;
+}
+
+// ----------------
+// Mixins stroke
+// ----------------
+
+@mixin stroke{
+	border-left: 1px solid;
+	border-color: $color-orange;
+	position: relative;
+	z-index: 999;
+	padding-left: 2rem;
+}
+
+ /* Structure globale */
+
+ *{
+ 	list-style-type: none;
+ 	outline: none;
+ }
+
+ body{
+ 	background-color: #ffffff;
+ }
+
+ header{
+ 	margin: 10rem 20% 15rem;
+ }
+
+ main{
+ 	margin: 0 15%;
+ }
+
+ /* Forme design */
+ .shape{
+ 	position: absolute;
+ }
+
+.shape-top--left{
+ 	top: 0;
+ 	left: 0;
+}
+
+.shape-top--right{
+ 	top: 0;
+ 	right: 0;
+}
+
+.shape-bottom--left{
+	bottom: 0;
+ 	left: 0;
+}
+
+.shape-bottom--right{
+ 	bottom: 0;
+ 	right: 0;
+}
+
+ /* Fin strcuture globale */
+
+ /* Header */
+
+.gc-title{
+	/*-moz-font-family: 'Messenger Rough', "Open Sans", "sans-serif";*/
+	font-family: 'Messenger-Rough', "Open Sans", "sans-serif";
+	text-transform: uppercase;
+	color: $color-orange;
+	text-align: center;
+}
+
+ /* Fin header */
+
+/* Main */
+
+.h3-like{
+	color: $color-blue;
+	font-weight: bold;
+	margin-bottom: 3rem;
+}
+
+.choix-citations > label{
+	margin-bottom: 2rem;
+	--input-color: var(--color-choix-citations);
+}
+
+/* Boutons radios */
+.radio{
+	position: absolute;
+	left: -9999px;
+}
+
+.radio-label{
+	display: flex;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+	padding-left: calc(var(--input-size) * 1.75);
+	height: var(--input-size);
+	color: $color-cyan;
+
+	&::before, &::after{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: 50%;
+	}
+
+	&::before{
+		display: block;
+		width: var(--input-size);
+		height: var(--input-size);
+		border: 2px solid var(--input-color);
+	}
+
+	&::after{
+		width: calc(var(--input-size) - var(--spacing-unit));
+		height: calc(var(--input-size) - var(--spacing-unit));
+		margin: calc(var(--spacing-unit) / 2);
+		background-color: var(--input-color);
+		transform: scale(0);
+		transform-origin: 50%;
+		transition: transform 150ms;
+	}
+
+}
+
+input:focus + .radio-label::before{
+	box-shadow:  0 0 0.5em 0.025em rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .radio-label::after{
+	transform: scale(1);
+}
+
+/* GO */
+#go{
+	width: calc(90% - 10%);
+	margin-left: 10%;
+	height: 75%; 
+	align-self: center;
+
+	.ready{
+		background-color: rgba(250, 250, 250, 1);
+		width: 100%;
+		height: 100%;
+		color: $color-blue;
+		text-transform: uppercase;
+		border: none;
+		border-radius: 15%; 
+		cursor: pointer;
+		font-size: 3rem;
+		font-weight: 900;
+		transition: .5s ease-in;
+	}
+
+	&:hover .ready{
+		color: $color-cyan;
+		background-color: rgba(240, 240, 240, 1);
+		transition: .5s ease-in;
+	}
+	
+}
+
+/* Générateur de citations */
+#generateur-citations{
+	counter-reset: generateur;
+	margin: 5rem 0 0 4rem;
+
+	> *+*{
+		margin-top: 2rem;
+	}
+
+	.citation{
+		list-style-type: none;
+		counter-increment: generateur;
+		color: $color-blue;
+		font-size: 2rem;
+		@include stroke;
+
+		&::before{
+			content: counter(generateur);
+			position: relative;
+			right: 6rem;
+			font-size: 2.5rem;
+			font-weight: 900;
+		}
+
+	}
+
+}
+
+/* Fin main */
+
+/* Footer */
+
+footer{
+	position: relative;
+	height: 10rem;
+	margin: 25% 0 0;
+
+	> p{
+		position: absolute;
+		bottom: 0;
+		left: 25%;
+		color: $color-orange;
+		font-size: 1.75rem;
+		font-weight: bold;
+	}
+
+} 
+
+/* Fin footer */

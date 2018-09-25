@@ -1,0 +1,259 @@
+ /* Mes styles responsifs "Générateur de citations" */
+
+@media only screen and (max-width: 1200px){
+
+	.shape-top--left > img, .shape-bottom--left > img, .shape-top--right > img, .shape-bottom--right > img{
+	    width: 85%;
+	}
+
+	.shape-top--right > img, .shape-bottom--right > img{
+		position: relative;
+		left: 15%;
+	}
+
+}
+
+@media only screen and (max-width: 1050px){
+
+ 	main{
+	    margin: 0 5%;
+	}
+
+	.shape-top--left > img, .shape-bottom--left > img, .shape-top--right > img, .shape-bottom--right > img{
+	    width: 77.5%;
+	}
+
+	.shape-top--right > img, .shape-bottom--right > img{
+		left: 22.5%;
+	}
+
+}
+
+@media only screen and (max-width: 950px){
+
+	.shape-top--left > img, .shape-bottom--left > img, .shape-top--right > img, .shape-bottom--right > img{
+	    width: 70%;
+	}
+
+	.shape-top--right > img, .shape-bottom--right > img{
+		left: 30%;
+	}
+
+	.gc-title{
+		font-size: 2.8rem;
+	}
+
+	#go .ready{
+	    font-size: 2.6rem;
+	}
+	   
+}
+
+@media only screen and (max-width: 900px){
+
+	.shape-top--left > img, .shape-bottom--left > img, .shape-top--right > img, .shape-bottom--right > img{
+	    width: 62.5%;
+	}
+
+	.shape-top--right > img, .shape-bottom--right > img{
+		left: 37.5%;
+	}
+
+	.gc-title{
+		font-size: 2.6rem;
+	}
+
+	#go .ready{
+	    font-size: 2.4rem;
+	}
+
+ 	.h3-like{
+ 		font-size: 2rem;
+ 	}
+	   
+}
+
+@media only screen and (max-width: 767px){
+
+	main{
+	    margin: 0;
+	}
+
+	.shape-top--left > img, .shape-bottom--left > img, .shape-top--right > img, .shape-bottom--right > img{
+	    width: 50%;
+	}
+
+	.shape-top--right > img, .shape-bottom--right > img{
+		left: 50%;
+	}
+
+	header{
+	    margin: 15rem 5% 10rem;
+	}
+
+ 	#nombre-citations, #theme-citations, #go{
+ 		grid-column: 1 / -1;
+ 		display: flex;
+		flex-direction: column;
+		align-items: center;
+ 	}
+
+ 	#nombre-citations{
+ 		margin-bottom: 4rem;
+
+ 		.choix-citations{
+ 			grid-template-columns: repeat(5, 1fr);
+
+
+	 		> *+*{
+	 			margin-left: 4rem;
+	 		}
+
+	 	}
+
+ 	}
+
+ 	#theme-citations{
+ 		margin-bottom: 4rem;
+
+ 		.choix-citations{
+	 		display: grid;
+	 		grid-template-columns: repeat(2, 1fr);
+
+	 		> *+*{
+	 			margin-left: 4rem;
+	 		}
+
+	 	}
+
+ 	}
+
+ 	#go{
+ 		width: 100%;
+		margin-left: 0;
+		height: 100%; 
+		align-self: center;
+
+		.ready{
+			width: 100px;
+			height: 85px;
+		}
+
+ 	}
+
+ 	footer > p{
+	    left: 10%;
+	    font-size: 1.55rem;
+	}
+
+	#generateur-citations{
+		margin: 5rem 5% 4rem;
+	}
+
+}
+
+@media only screen and (max-width: 576px){
+
+	.shape-top--left > img, .shape-bottom--left > img, .shape-top--right > img, .shape-bottom--right > img{
+	    width: 37.5%;
+	}
+
+	.shape-top--right > img, .shape-bottom--right > img{
+		left: 62.5%;
+	}
+
+	#nombre-citations .choix-citations > * + * {
+	    margin-left: 2rem;
+	}
+
+	#generateur-citations{
+
+		.citation{
+			font-size: 1.7rem;
+			padding-left: 1rem;
+
+			&::before{
+				right: 3.5rem;
+				font-size: 2rem;
+			}
+
+		}
+
+	}
+
+	footer > p{
+		font-size: 1.45rem;
+	}
+	   
+}
+
+@media only screen and (max-width: 480px){
+
+	.shape-top--left > img, .shape-bottom--left > img, .shape-top--right > img, .shape-bottom--right > img{
+	    width: 30%;
+	}
+
+	.shape-top--right > img, .shape-bottom--right > img{
+		left: 70%;
+	}
+
+	#nombre-citations .choix-citations{
+	    display: grid;
+	}
+
+	.radio-label{
+	    padding-left: calc(var(--input-size) * 1.25);
+	}
+
+	.gc-title{
+		font-size: 2.2rem
+	}
+
+	.h3-like {
+	    font-size: 1.65rem;
+	}
+
+	label{
+		font-size: 1.2rem;
+	}
+
+	#go .ready {
+	    font-size: 2rem;
+	}
+
+	#generateur-citations{
+		margin: 5rem 2% 4rem;
+
+		.citation{
+			font-size: 1.35rem;
+
+			&::before{
+				font-size: 1.8rem;
+			}
+
+		}
+
+	}
+
+	footer > p{
+		font-size: 1.15rem;
+	}
+	   
+}
+
+@media only screen and (max-width: 400px){
+
+	.shape-top--left > img, .shape-bottom--left > img, .shape-top--right > img, .shape-bottom--right > img{
+	    width: 25%;
+	}
+
+	.shape-top--right > img, .shape-bottom--right > img{
+		left: 75%;
+	}
+
+	footer > p{
+		font-size: 1.05rem;
+		left: 5%;
+	}
+
+}
